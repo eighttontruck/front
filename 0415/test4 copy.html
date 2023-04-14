@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let newText='';
+        let idx=0;
+        // function inputBox(){
+        //     let newText='<input type="text" name="product" id="product"/>';
+        //     demo.innerHTML=newText;
+        // }
+        // function inputBox(){
+        //     newText+='<input type="text" name="product" id="product"/><br>';
+        //     demo.innerHTML=newText;
+        // }
+        function inputBox(){
+            idx++;
+            newText+='<div id="proBox'+idx+'">';
+            newText+='<input type="text" name="product" id="product'+idx+'"/> &nbsp';
+            newText+='<input type="button" value="삭제" onclick="deleteBox('+idx+')"><br>';
+            newText+='</div>';
+            demo.innerHTML=newText;
+        }
+        
+        function deleteBox(idx){
+            let proBox="proBox"+idx;
+            let item=document.getElementById(proBox)
+            item.parentNode.removeChild(item);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>동적폼</h2>
+        <form action="" name="myform">
+            <p>
+                <input type="button" value="입력창추가" onclick="inputBox()">
+                <input type="button" value="입력창제거" onclick="location.reload();">
+            </p>
+        </form>
+    </div>
+    <div id="demo">
+
+    </div>
+</body>
+</html>
