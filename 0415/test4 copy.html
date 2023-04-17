@@ -22,7 +22,8 @@
             newText+='<div id="proBox'+idx+'">';
             newText+='<input type="text" name="product" id="product'+idx+'"/> &nbsp';
             newText+='<input type="button" value="삭제" onclick="deleteBox('+idx+')"><br>';
-            newText+='</div>';
+            newText+='</div>'; //누적이 안되지 왜?
+            
             demo.innerHTML=newText;
         }
         
